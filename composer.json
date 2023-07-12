@@ -23,9 +23,9 @@
         "composer/installers": "~1"
     },
     "extra": {
-        "installer-name": "js.extension",
+        "installer-name": "proklung.js.extension",
         "installer-paths": {
-            "./bitrix/modules/{$vendor}/{$name}/": ["type:bitrix-d7-module"]
+            "./bitrix/modules/{$name}/": ["type:bitrix-d7-module"]
         }
     }
 }
