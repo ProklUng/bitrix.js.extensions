@@ -10,8 +10,6 @@ return [
 	'rel' => [
 		'main.polyfill.core',
 		'ui.vue',
-		'vue2-dropzone',
-		'vue2-dropzone/dist/vue2Dropzone.min.css',
 	],
 	'skip_core' => true,
 ];
