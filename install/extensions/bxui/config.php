@@ -9,6 +9,7 @@ return [
 	'js' => 'dist/bxui.bundle.js',
 	'rel' => [
 		'main.polyfill.core',
+		'is-mobile',
 		'ui.vue',
 	],
 	'skip_core' => true,

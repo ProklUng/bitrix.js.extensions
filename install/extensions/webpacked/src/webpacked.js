@@ -10,6 +10,6 @@ export class Webpacked
 	}
 }
 
-window.BX.Protocol.Webpacked = Webpacked;
+window.BX.Proklung.Webpacked = Webpacked;
 
 

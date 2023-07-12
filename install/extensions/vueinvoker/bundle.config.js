@@ -1,7 +1,7 @@
 module.exports = {
 	input: 'src/vueinvoker.js',
 	output: 'dist/vueinvoker.bundle.js',
-	namespace: 'BX.Protocol',
+	namespace: 'BX.Proklung',
 	minification: true,
 	sourceMaps: false,
 	plugins: {

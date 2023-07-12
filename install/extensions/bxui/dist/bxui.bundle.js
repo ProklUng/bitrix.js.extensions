@@ -1,7 +1,9 @@
 /* eslint-disable */
 this.BX = this.BX || {};
-(function (exports,ui_vue) {
+(function (exports,isMobile,ui_vue) {
   'use strict';
+
+  isMobile = isMobile && isMobile.hasOwnProperty('default') ? isMobile['default'] : isMobile;
 
   var loadStyles = function loadStyles() {
     var domain = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
@@ -528,37 +530,6 @@ this.BX = this.BX || {};
     template: '  <div class="drag-n-drop">\n' + '    <label\n' + '      v-if="type === \'button\'"\n' + '      class="ui-ctl ui-ctl-file-btn"\n' + '      :class="{ \'bx-input-file-disabled\': disabled }"\n' + '      :title="title"\n' + '    >\n' + '      <input\n' + '        class="ui-ctl-element"\n' + '        type="file"\n' + '        :multiple="multiple"\n' + '        :disabled="disabled"\n' + '        @change="onChange"\n' + '      >\n' + '      <div class="ui-ctl-label-text">\n' + '        {{ placeholder || defaultPlaceholder }}\n' + '      </div>\n' + '    </label>\n' + '    <label\n' + '      v-else-if="type === \'link\'"\n' + '      class="ui-ctl ui-ctl-file-link"\n' + '      :class="{ \'bx-input-file-disabled\': disabled }"\n' + '      :title="title"\n' + '    >\n' + '      <input\n' + '        class="ui-ctl-element"\n' + '        type="file"\n' + '        :multiple="multiple"\n' + '        :disabled="disabled"\n' + '        @change="onChange"\n' + '      >\n' + '      <div class="ui-ctl-label-text">\n' + '        {{ placeholder || defaultPlaceholder }}\n' + '      </div>\n' + '    </label>\n' + '    <label\n' + '      v-else-if="type === \'drop\'"\n' + '      class="ui-ctl ui-ctl-file-drop"\n' + '      :class="{ \'bx-input-file-disabled\': disabled }"\n' + '      :title="title"\n' + '    >\n' + '      <div class="ui-ctl-label-text">\n' + '        <span>{{ placeholder || defaultPlaceholder }}</span>\n' + '        <small>Перетащить с помощью drag\'n\'drop</small>\n' + '      </div>\n' + '      <input\n' + '        class="ui-ctl-element"\n' + '        type="file"\n' + '        :multiple="multiple"\n' + '        :disabled="disabled"\n' + '        @change="onChange"\n' + '      >\n' + '    </label>\n' + '    <ul v-if="files.length" class="drag-n-drop__list">\n' + '      <li v-for="(file, key) in files" :key="key" class="drag-n-drop__file">\n' + '        <span class="drag-n-drop__name">{{ getName(file) }}</span>\n' + '        <span class="drag-n-drop__delete" @click="onDelete(key)"></span>\n' + '      </li>\n' + '    </ul>\n' + '  </div>'
   };
 
-  function createCommonjsModule(fn, module) {
-    return module = {
-      exports: {}
-    }, fn(module, module.exports), module.exports;
-  }
-
-  var isMobile_1 = createCommonjsModule(function (module) {
-
-  module.exports = isMobile;
-  module.exports.isMobile = isMobile;
-  module.exports["default"] = isMobile;
-  var mobileRE = /(android|bb\d+|meego).+mobile|armv7l|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series[46]0|samsungbrowser|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i;
-  var notMobileRE = /CrOS/;
-  var tabletRE = /android|ipad|playbook|silk/i;
-  function isMobile(opts) {
-    if (!opts) opts = {};
-    var ua = opts.ua;
-    if (!ua && typeof navigator !== 'undefined') ua = navigator.userAgent;
-    if (ua && ua.headers && typeof ua.headers['user-agent'] === 'string') {
-      ua = ua.headers['user-agent'];
-    }
-    if (typeof ua !== 'string') return false;
-    var result = mobileRE.test(ua) && !notMobileRE.test(ua) || !!opts.tablet && tabletRE.test(ua);
-    if (!result && opts.tablet && opts.featureDetect && navigator && navigator.maxTouchPoints > 1 && ua.indexOf('Macintosh') !== -1 && ua.indexOf('Safari') !== -1) {
-      result = true;
-    }
-    return result;
-  }
-  });
-  var isMobile_2 = isMobile_1.isMobile;
-
   var BxLink = {
     methods: {
       onClick: function onClick(e) {
@@ -578,7 +549,7 @@ this.BX = this.BX || {};
           anchor.target = '_blank';
           anchor.click();
         };
-        if (inNewTab) openLinkInNewTab(url);else if (isMobile_1()) openLinkInNewTab(url);else this.openPath(url)["catch"](function () {
+        if (inNewTab) openLinkInNewTab(url);else if (isMobile()) openLinkInNewTab(url);else this.openPath(url)["catch"](function () {
           return openLinkInNewTab(url);
         });
       }
@@ -786,4 +757,4 @@ this.BX = this.BX || {};
 
   exports.Bxui = Bxui;
 
-}((this.BX.Protocol = this.BX.Protocol || {}),BX));
+}((this.BX.Proklung = this.BX.Proklung || {}),BX,BX));

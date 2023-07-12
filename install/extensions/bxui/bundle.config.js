@@ -1,7 +1,7 @@
 module.exports = {
 	input: 'src/bxui.js',
 	output: 'dist/bxui.bundle.js',
-	namespace: 'BX.Protocol',
+	namespace: 'BX.Proklung',
 	minification: false,
 	sourceMaps: false,
 	plugins: {
