@@ -1,0 +1,37 @@
+{
+  "name": "webpacked",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "encore": "encore"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.14.5",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/preset-env": "^7.14.5",
+    "@symfony/webpack-encore": "^0.33.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.8.0",
+    "postcss-calc": "^7.0.5",
+    "postcss-flexbugs-fixes": "^4.2.1",
+    "postcss-import": "^12.0.1",
+    "postcss-loader": "^4.0.0",
+    "postcss-preset-env": "^6.7.0",
+    "postcss-responsive-font": "^1.0.6",
+    "postcss-scss": "^2.1.1",
+    "sass": "1.32.13",
+    "sass-loader": "^10.0.0",
+    "stylelint": "^13.13.1",
+    "stylelint-order": "^4.1.0",
+    "stylelint-scss": "^3.21.0",
+    "vue": "^2.7.14",
+    "vue-loader": "^15.10.1",
+    "vue-template-compiler": "2.7.14"
+  },
+  "peerDependencies": {
+    "css-loader": "^3.6.0",
+    "postcss": "^8.4.25"
+  }
+}

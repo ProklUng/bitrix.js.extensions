@@ -1,0 +1,9 @@
+{
+  "entrypoints": {
+    "webpacked.bundle": {
+      "js": [
+        "/dist/webpacked.bundle.js"
+      ]
+    }
+  }
+}
